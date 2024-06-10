@@ -6,14 +6,12 @@ jobs:
     container: golang:1.22
     steps:
       - uses: actions/checkout@v4
-
+  
       - name: Vet
         run: go vet ./...
-
+  
       - name: Run Unit Tests
         run: GOOS=linux GOARCH=amd64 go test
-
-      
 
   deploy:
     name: Push Docker image to Docker Hub
@@ -37,7 +35,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5.5.1
         with:
-          images: nicedayone7/final-main
+          images: nicedayone7/hello-golang
 
       - name: Build and push Docker Inage
         uses: docker/build-push-action@v5
