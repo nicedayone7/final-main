@@ -1,5 +1,7 @@
 name: final-main
-on: push
+on: 
+  push:
+    branches: [ "main", "first-iter"]
 jobs:
   test:
     runs-on: ubuntu-latest
